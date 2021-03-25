@@ -28,8 +28,8 @@ app.use(
     }
 );
 
-app.get('/', function(req: Request, res: Response) {
-    
+app.get('/', function (req: Request, res: Response) {
+
     res.send(`
     <!DOCTYPE html>
     <html lang="en">
