@@ -17,6 +17,9 @@ const srcConfig = {
     username: String(process.env.DB_USERNAME),
     password: String(process.env.DB_PASSWORD),
     database: String(process.env.DB_DATABASE),
+    ssl: {
+        rejectUnauthorized: false,
+    },
     entities: ["./src/models/**.ts"],
     migrations: ["./src/database/migrations/**.ts"],
     cli: {
@@ -35,6 +38,9 @@ const distConfig = {
     username: String(process.env.DB_USERNAME),
     password: String(process.env.DB_PASSWORD),
     database: String(process.env.DB_DATABASE),
+    ssl: {
+        rejectUnauthorized: false,
+    },
     entities: ["./dist/models/**.js"],
     migrations: ["./dist/database/migrations/**.js"],
     cli: {
