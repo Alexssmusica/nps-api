@@ -1,5 +1,5 @@
 import request from 'supertest';
-import { http } from '../app';
+import { app } from '../app';
 import createConnection from '../database';
 
 describe('Surveys', () => {
@@ -15,7 +15,7 @@ describe('Surveys', () => {
     });
 
     it('Should be able to create a new survey', async () => {
-        const response = await request(http).post('/surveys').send({
+        const response = await request(app).post('/surveys').send({
             title: 'Survey title Example',
             description: 'Survey description Example'
         });
@@ -25,12 +25,12 @@ describe('Surveys', () => {
     });
 
     it('Should be able to get all surveys', async () => {
-        await request(http).post('/surveys').send({
+        await request(app).post('/surveys').send({
             title: 'Survey title Example',
             description: 'Survey description Example'
         });
 
-        const response = await request(http).get('/surveys');
+        const response = await request(app).get('/surveys');
 
         expect(response.body.length).toBe(2);
     });

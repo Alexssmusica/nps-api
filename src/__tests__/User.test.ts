@@ -1,5 +1,5 @@
 import request from 'supertest';
-import { http } from '../app';
+import { app } from '../app';
 import createConnection from '../database';
 
 describe('Users', () => {
@@ -15,7 +15,7 @@ describe('Users', () => {
     });
 
     it('Should be able to create a new user', async () => {
-        const response = await request(http).post('/users').send({
+        const response = await request(app).post('/users').send({
             email: 'user@example.com',
             name: 'User Example'
         });
@@ -24,7 +24,7 @@ describe('Users', () => {
     });
 
     it('Should not be able to create a user with exists email', async () => {
-        const response = await request(http).post('/users').send({
+        const response = await request(app).post('/users').send({
             email: 'user@example.com',
             name: 'User Example'
         });

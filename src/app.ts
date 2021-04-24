@@ -5,10 +5,10 @@ import createConnection from './database';
 import cors from 'cors';
 import express, { NextFunction, Request, Response } from 'express';
 import { AppError } from './errors/AppError';
-import { createServer } from 'http';
 import path from 'path';
 import ejs from 'ejs';
 import { router } from './router';
+import favicon from 'serve-favicon';
 
 createConnection();
 const app = express();
@@ -22,7 +22,7 @@ app.get('/', (req, res) => {
     return res.render('home/home.html');
 });
 
-const http = createServer(app);
+app.use(favicon(path.join(__dirname, 'views', 'img', 'favicon.png')));
 
 app.use(cors());
 app.use(express.json({ limit: '50mb' }));
@@ -42,4 +42,4 @@ app.use((err: Error, request: Request, response: Response, _next: NextFunction) 
     });
 });
 
-export { http };
+export { app };
