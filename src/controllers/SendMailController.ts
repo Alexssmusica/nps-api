@@ -5,10 +5,10 @@ import { AppError } from '../errors/AppError';
 import { SurveysRepository } from '../repositories/SurveysRepository';
 import { SurveysUsersRepository } from '../repositories/SurveysUsersRepository';
 import { UsersRepository } from '../repositories/UsersRepository';
-import SendMailservice from '../services/SendMailservice';
+import SendMailService from '../services/SendMailService';
 
 class SendMailController {
-    async execute (request: Request, response: Response) {
+    async execute(request: Request, response: Response) {
         const { email, survey_id } = request.body;
 
         const usersRepository = getCustomRepository(UsersRepository);
@@ -44,7 +44,7 @@ class SendMailController {
 
         if (surveyUserExists) {
             variables.id = surveyUserExists.id;
-            await SendMailservice.excute(email, survey.title, variables, npsPath);
+            await SendMailService.execute(email, survey.title, variables, npsPath);
             return response.json(surveyUserExists);
         }
 
@@ -57,7 +57,7 @@ class SendMailController {
 
         variables.id = surveyUser.id;
 
-        await SendMailservice.excute(email, survey.title, variables, npsPath);
+        await SendMailService.execute(email, survey.title, variables, npsPath);
 
         return response.status(201).json(surveyUser);
     }

@@ -1,6 +1,5 @@
-import { app } from './app';
-
+import { http } from './app';
 
 const porta = process.env.PORT || 8080;
 
-app.listen(porta, () => console.log('Servidor iniciado!'));
+http.listen(porta, () => console.log('Servidor iniciado!'));

@@ -5,15 +5,12 @@ import * as yup from 'yup';
 import { AppError } from '../errors/AppError';
 
 class UserController {
-    async create (request: Request, response: Response) {
+    async create(request: Request, response: Response) {
         const { name, email } = request.body;
 
         const schema = yup.object().shape({
             name: yup.string().required(),
-            email: yup
-                .string()
-                .email()
-                .required()
+            email: yup.string().email().required()
         });
 
         try {

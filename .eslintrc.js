@@ -1,39 +1,31 @@
 module.exports = {
-	parser: '@typescript-eslint/parser',
 	env: {
-		es6: true,
-		node: true
+		"browser": true,
+		"es2021": true,
+		"jest": true,
+		"node": true
 	},
-	plugins: ['@typescript-eslint'],
-	extends: ['plugin:@typescript-eslint/recommended', 'prettier/@typescript-eslint', 'standard'],
+	extends: [
+		"eslint:recommended",
+		"plugin:@typescript-eslint/eslint-recommended",
+		"plugin:@typescript-eslint/recommended",
+		"plugin:prettier/recommended"
+	],
 	globals: {
 		Atomics: 'readonly',
 		SharedArrayBuffer: 'readonly'
 	},
+	parser: "@typescript-eslint/parser",
 	parserOptions: {
-		ecmaVersion: 2018,
-		sourceType: 'module'
+		"ecmaVersion": 12,
+		"sourceType": "module"
 	},
+	plugins: ['@typescript-eslint'],
 	rules: {
-		'semi': [1, 'always'],
-		'indent': ['error', 4, { ignoredNodes: ['ConditionalExpression'], ignoreComments: true }],
-		'eol-last': 'off',
-		'no-tabs': 'off',
 		'camelcase': 'off',
-		'no-undef': 'off',
-		'@typescript-eslint/ban-types': 'off',
-		'prettier/prettier': 'off',
-		'no-multiple-empty-lines': 'off',
-		'padded-blocks': 'off',
-		'no-mixed-spaces-and-tabs': 'off',
-		'@typescript-eslint/camelcase': 'off',
-		'@typescript-eslint/no-non-null-assertion': 'off',
-		'@typescript-eslint/no-explicit-any': 'off',
-		'@typescript-eslint/no-unused-vars': 'off',
-		"@typescript-eslint/camelcase": "off",
-		"@typescript-eslint/no-var-requires": "off",
-		"@typescript-eslint/explicit-module-boundary-types": "off",
-		'no-unused-vars': ['off', { 'varsIgnorePattern': '^_' }],
-		'@typescript-eslint/no-unused-vars': ['off', { 'varsIgnorePattern': '^_' }],
+        "prettier/prettier": "error",
+        "@typescript-eslint/explicit-module-boundary-types": "off",
+        "@typescript-eslint/ban-types": "off",
+        "@typescript-eslint/no-unused-vars": "off"
 	}
 };

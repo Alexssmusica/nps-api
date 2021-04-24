@@ -4,7 +4,7 @@ import { AppError } from '../errors/AppError';
 import { SurveysUsersRepository } from '../repositories/SurveysUsersRepository';
 
 class AnswerController {
-    async execute (request: Request, response: Response) {
+    async execute(request: Request, response: Response) {
         const { value } = request.params;
         const { u } = request.query;
 
