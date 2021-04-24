@@ -1,5 +1,3 @@
 import { app } from './app';
 
-const porta = process.env.PORT || 8080;
-
-app.listen(porta, () => console.log('Servidor iniciado!'));
+app.listen(process.env.PORT || 8080, () => console.log('Servidor iniciado!'));
