@@ -55,7 +55,7 @@
     "@types/nodemailer": "^6.4.4",
     "@types/serve-favicon": "^2.5.3",
     "@types/supertest": "^2.0.11",
-    "@types/uuid": "^8.3.1",
+    "@types/uuid": "^8.3.3",
     "@typescript-eslint/eslint-plugin": "^4.33.0",
     "@typescript-eslint/parser": "^4.33.0",
     "babel-plugin-transform-typescript-metadata": "^0.3.2",
