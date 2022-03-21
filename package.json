@@ -31,7 +31,7 @@
     "express": "^4.17.3",
     "express-async-errors": "^3.1.1",
     "handlebars": "^4.7.7",
-    "nodemailer": "^6.7.2",
+    "nodemailer": "^6.7.3",
     "pg": "^8.7.3",
     "reflect-metadata": "^0.1.13",
     "serve-favicon": "^2.5.0",
